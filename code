@@ -1,0 +1,244 @@
+total = 0.00
+order = []
+
+WhatSandwich = "no"
+SizeBeverage = "no"
+SizeFries = "no"
+NumberOfPackets = 0
+ordering = True
+
+
+while ordering:
+    print(" ")
+    Sandwich = input("Do you want a sandwich? ").lower()
+    if Sandwich == "yes":
+        WhatSandwich = input("What Sandwich do you want: Chicken $5.25, Beef $6.25, Tofu $5.75: ").lower()
+        if WhatSandwich == "chicken":
+            order.append("chicken sandwich")
+            total += 5.25
+        elif WhatSandwich == "beef":
+            order.append("beef sandwich")
+            total += 6.25
+        elif WhatSandwich == "tofu":
+            order.append("tofu sandwich")
+            total += 5.75
+        else:
+            print("Sorry, we don't have that sandwich. Please select again.")
+            WhatSandwich = input("What Sandwich do you want: Chicken $5.25, Beef $6.25, Tofu $5.75: ").lower()
+            if WhatSandwich == "chicken":
+                order.append("chicken sandwich")
+                total += 5.25
+            elif WhatSandwich == "beef":
+                order.append("beef sandwich")
+                total += 6.25
+            elif WhatSandwich == "tofu":
+                order.append("tofu sandwich")
+                total += 5.75
+
+    elif Sandwich == "no":
+        pass
+    else:
+        print("Please say Yes or No")
+        Sandwich = input("Do you want a sandwich? ").lower()
+        if Sandwich == "yes":
+            WhatSandwich = input("What Sandwich do you want: Chicken $5.25, Beef $6.25, Tofu $5.75: ").lower()
+            if WhatSandwich == "chicken":
+                order.append("chicken sandwich")
+                total += 5.25
+            elif WhatSandwich == "beef":
+                order.append("beef sandwich")
+                total += 6.25
+            elif WhatSandwich == "tofu":
+                order.append("tofu sandwich")
+                total += 5.75
+            else:
+                print("Sorry, we don't have that sandwich. Please select again.")
+                WhatSandwich = input("What Sandwich do you want: Chicken $5.25, Beef $6.25, Tofu $5.75: ").lower()
+                if WhatSandwich == "chicken":
+                    order.append("chicken sandwich")
+                    total += 5.25
+                elif WhatSandwich == "beef":
+                    order.append("beef sandwich")
+                    total += 6.25
+                elif WhatSandwich == "tofu":
+                    order.append("tofu sandwich")
+                    total += 5.75
+
+    print(f"You have a {WhatSandwich} sandwich and it costs: ${total:.2f}")
+
+
+    Beverage = input("Do you want a beverage? ").lower()
+    if Beverage == "yes":
+        SizeBeverage = input("What size beverage do you want (small $1.00 medium $1.75 large $2.25): ").lower()
+        if SizeBeverage == "small":
+            total += 1.00
+            order.append("small beverage")
+        elif SizeBeverage == "medium":
+            total += 1.75
+            order.append("medium beverage")
+        elif SizeBeverage == "large":
+            total += 2.25
+            order.append("large beverage")
+        else:
+            print("Sorry, we don't have that beverage size. Please select again.")
+            SizeBeverage = input("What size beverage do you want (small $1.00 medium $1.75 large $2.25): ").lower()
+            if SizeBeverage == "small":
+                total += 1.00
+                order.append("small beverage")
+            elif SizeBeverage == "medium":
+                total += 1.75
+                order.append("medium beverage")
+            elif SizeBeverage == "large":
+                total += 2.25
+                order.append("large beverage")
+    elif Beverage == "no":
+        pass
+    else:
+        print("Please say Yes or No")
+        Beverage = input("Do you want a beverage? ").lower()
+        if Beverage == "yes":
+            SizeBeverage = input("What size beverage do you want (small $1.00 medium $1.75 large $2.25): ").lower()
+            if SizeBeverage == "small":
+                total += 1.00
+                order.append("small beverage")
+            elif SizeBeverage == "medium":
+                total += 1.75
+                order.append("medium beverage")
+            elif SizeBeverage == "large":
+                total += 2.25
+                order.append("large beverage")
+            else:
+                print("Sorry, we don't have that sized beverage. Please select again.")
+                SizeBeverage = input("What size beverage do you want (small $1.00 medium $1.75 large $2.25): ").lower()
+                if SizeBeverage == "small":
+                    total += 1.00
+                    order.append("small beverage")
+                elif SizeBeverage == "medium":
+                    total += 1.75
+                    order.append("medium beverage")
+                elif SizeBeverage == "large":
+                    total += 2.25
+                    order.append("large beverage")
+
+
+    Fries = input("Do you want fries? ").lower()
+    if Fries == "yes":
+        SizeFries = input("What size fries do you want (small $1.00 medium $1.50 large $2.00): ").lower()
+        if SizeFries == "small":
+            Mega = input("Do you want to mega-size your fries? ").lower()
+            if Mega == "yes":
+                total += 2.00
+                SizeFries = "large"
+                order.append("large fries (mega-sized)")
+            else:
+                total += 1.00
+                order.append("small fries")
+        elif SizeFries == "medium":
+            total += 1.50
+            order.append("medium fries")
+        elif SizeFries == "large":
+            total += 2.00
+            order.append("large fries")
+        else:
+            print("Sorry, we don't have that size fries. Please select again.")
+            SizeFries = input("What size fries do you want (small $1.00 medium $1.50 large $2.00): ").lower()
+            if SizeFries == "small":
+                Mega = input("Do you want to mega-size your fries? ").lower()
+                if Mega == "yes":
+                    total += 2.00
+                    SizeFries = "large"
+                    order.append("large fries (mega-sized)")
+                else:
+                    total += 1.00
+                    order.append("small fries")
+            elif SizeFries == "medium":
+                total += 1.50
+                order.append("medium fries")
+            elif SizeFries == "large":
+                total += 2.00
+                order.append("large fries")
+
+    elif Fries == "no":
+        pass
+    else:
+        print("Please say Yes or No")
+        Fries = input("Do you want fries? ").lower()
+        if Fries == "yes":
+            SizeFries = input("What size fries do you want (small $1.00 medium $1.50 large $2.00): ").lower()
+            if SizeFries == "small":
+                Mega = input("Do you want to mega-size your fries? ").lower()
+                if Mega == "yes":
+                    total += 2.00
+                    SizeFries = "large"
+                    order.append("large fries (mega-sized)")
+                else:
+                    total += 1.00
+                    order.append("small fries")
+            elif SizeFries == "medium":
+                total += 1.50
+                order.append("medium fries")
+            elif SizeFries == "large":
+                total += 2.00
+                order.append("large fries")
+            else:
+                print("Sorry, we don't have that size fries. Please select again.")
+                SizeFries = input("What size fries do you want (small $1.00 medium $1.50 large $2.00): ").lower()
+                if SizeFries == "small":
+                    Mega = input("Do you want to mega-size your fries? ").lower()
+                    if Mega == "yes":
+                        total += 2.00
+                        SizeFries = "large"
+                        order.append("large fries (mega-sized)")
+                    else:
+                        total += 1.00
+                        order.append("small fries")
+                elif SizeFries == "medium":
+                    total += 1.50
+                    order.append("medium fries")
+                elif SizeFries == "large":
+                    total += 2.00
+                    order.append("large fries")
+
+    print(f"You have {SizeFries} fries and your cost so far is: ${total:.2f}")
+
+
+    Ketchup = input("Do you want any ketchup packets? The price is $0.25 per packet. ").lower()
+    if Ketchup == "yes":
+        while True:
+            try:
+                NumberOfPackets = int(input("How many packets do you want? "))
+                total += NumberOfPackets * 0.25
+                order.append(f"{NumberOfPackets} ketchup packets")
+                break
+            except ValueError:
+                print("Please enter a valid number.")
+    elif Ketchup == "no":
+        print("You're getting no ketchup.")
+    else:
+        print("Please say Yes or No")
+        Ketchup = input("Do you want any ketchup packets? The price is $0.25 per packet. ").lower()
+        if Ketchup == "yes":
+            while True:
+                try:
+                    NumberOfPackets = int(input("How many packets do you want? "))
+                    total += NumberOfPackets * 0.25
+                    order.append(f"{NumberOfPackets} ketchup packets")
+                    break
+                except ValueError:
+                    print("Please enter a valid number.")
+
+    if Sandwich == "yes" and Beverage == "yes" and Fries == "yes":
+        total -= 1.00
+        print("Combo discount applied! -$1.00")
+
+    KeepGoing = input("Would you like to keep ordering? ").lower()
+    if KeepGoing == "no":
+        ordering = False
+    else:
+        ordering = True
+
+    print(" ")
+    print(f"Your total is: ${total:.2f}")
+    print("You ordered:")
+    for item in order:
+        print(" -", item)
